@@ -12,23 +12,74 @@ public static class Methods
             .ToArray();
     }
     
-    public static int SolvePassword(int[] input)
+    public static int SolveFirstPassword(int[] input)
     {
-        var dial = 50;
-        var counter = 0;
+        var dialSize = 50;
+        var zeroPassCounter = 0;
 
         foreach (var i in input)
         {
-            var newPosition = (dial + i) % 100;
+            var newPosition = (dialSize + i) % 100;
 
             if (newPosition == 0)
             {
-                counter++;
+                zeroPassCounter ++;
             }
 
-            dial = newPosition;
+            dialSize = newPosition;
         }
 
-        return counter;
+        return zeroPassCounter ;
+    }
+
+    public static int SolveSecondPassword(int[] input)
+    {
+        const int dialSize = 100;
+        var dial = 50;
+        var zeroPassCounter = 0;
+
+        foreach (var rotation  in input)
+        {
+            if (rotation > 0)
+            {
+                var clicksToFirstZero = (dialSize - dial) % dialSize;
+                
+                if (clicksToFirstZero == 0)
+                    clicksToFirstZero = dialSize;
+
+                if (rotation >= clicksToFirstZero)
+                {
+                    zeroPassCounter += 1 + (rotation - clicksToFirstZero) / dialSize;
+                }
+            }
+            else if (rotation < 0)
+            {
+                var leftClicks = Math.Abs(rotation);
+
+                var clicksToFirstZero = dial;
+                
+                if (clicksToFirstZero == 0)
+                    clicksToFirstZero = dialSize;
+
+                if (leftClicks >= clicksToFirstZero)
+                {
+                    zeroPassCounter += 1 + (leftClicks - clicksToFirstZero) / dialSize;
+                }
+            }
+            
+            dial = NormalizePosition(dial + rotation, dialSize);        }
+        
+        return zeroPassCounter;
+    }
+    
+
+    private static int NormalizePosition(int value, int modulo)
+    {
+        var result = value % modulo;
+        
+        if (result < 0)
+            result += modulo;
+
+        return result;
     }
 }

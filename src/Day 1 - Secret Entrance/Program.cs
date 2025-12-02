@@ -6,7 +6,10 @@ var input = File.ReadAllText("input.txt");
 
 var numbers = Methods.ParseInput(input);
 
-var password = Methods.SolvePassword(numbers);
+var firstPassword = Methods.SolveFirstPassword(numbers);
+Console.WriteLine($"The password is: '{firstPassword}' for part 1");
 
-Console.WriteLine($"The password is: '{password}' for part 1");
+var secondPassword = Methods.SolveSecondPassword(numbers);
+Console.WriteLine($"The password is: '{secondPassword}' for part 2");
+
 Console.ReadLine();

@@ -8,5 +8,5 @@ var numbers = Methods.ParseInput(input);
 
 var password = Methods.SolvePassword(numbers);
 
-Console.WriteLine($"The password is: {password}");
+Console.WriteLine($"The password is: '{password}' for part 1");
 Console.ReadLine();

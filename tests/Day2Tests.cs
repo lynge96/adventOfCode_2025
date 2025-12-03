@@ -54,10 +54,7 @@ public class Day2Tests
     [InlineData(222222, 222, 222)]
     [InlineData(446446, 446, 446)]
     [InlineData(38593859, 3859, 3859)]
-    public void SplitNumber_ReturnsExpectedNumbers(
-        long input,
-        long expectedFirstNumber,
-        long expectedSecondNumber)
+    public void SplitNumber_ReturnsExpectedNumbers(long input, long expectedFirstNumber, long expectedSecondNumber)
     {
         // Act
         var (firstNumber, secondNumber) = Day2.SplitNumber(input);
@@ -65,5 +62,32 @@ public class Day2Tests
         // Assert
         Assert.Equal(expectedFirstNumber, firstNumber);
         Assert.Equal(expectedSecondNumber, secondNumber);
+    }
+    
+    [Fact]
+    public void FindProductIdWithRepeatingDigits_ReturnsExpectedSum()
+    {
+        // Arrange
+        var expectedSum = 4174379265;
+        
+        // Act
+        var result = Day2.FindProductIdWithRepeatingDigits(_testRange);
+        
+        // Assert
+        Assert.Equal(expectedSum, result);
+    }
+
+    [Theory]
+    [InlineData("12341234", 2, true)]
+    [InlineData("123123123", 3, true)]
+    [InlineData("1212121212",5, true)]
+    [InlineData("1111111", 7, true)]
+    public void CheckNumberSequences_FindCorrectSequences(string productId, int partsToSplit, bool expectedResult)
+    {
+        // Act
+        var result = Day2.CheckNumberSequences(productId, partsToSplit);
+        
+        // Assert
+        Assert.Equal(expectedResult, result);
     }
 }

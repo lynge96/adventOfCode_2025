@@ -1,6 +1,6 @@
 ﻿namespace Day01;
 
-public static class Methods
+public static class Day1
 {
     public static int[] ParseInput(string input)
     {

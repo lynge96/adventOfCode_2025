@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\src\Day 1 - Secret Entrance\Day 1 - Secret Entrance.csproj" />
+    <ProjectReference Include="..\src\Day 2 - Gift Shop\Day 2 - Gift Shop.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
 ﻿using Day01;
 
-namespace AdventOfCode2025.Tests.Day01Tests;
+namespace AdventOfCode2025.Tests;
 
-public class MethodsTests
+public class Day1Tests
 {
     [Fact]
     public void ParseInput_ReturnsExpectedInts()
@@ -12,7 +12,7 @@ public class MethodsTests
         var expected = new[] { 21, 37, -39 };
         
         // Act
-        var result = Methods.ParseInput(input);
+        var result = Day1.ParseInput(input);
 
         // Assert
         Assert.Equal(expected, result);
@@ -26,7 +26,7 @@ public class MethodsTests
         var expected = 2;
         
         // Act
-        var result = Methods.SolveFirstPassword(input);
+        var result = Day1.SolveFirstPassword(input);
         
         // Assert
         Assert.Equal(expected, result);
@@ -40,7 +40,7 @@ public class MethodsTests
         var expected = 6;
         
         // Act
-        var result = Methods.SolveSecondPassword(input);
+        var result = Day1.SolveSecondPassword(input);
         
         // Assert
         Assert.Equal(expected, result);

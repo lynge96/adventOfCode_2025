@@ -19,7 +19,7 @@ public class Day3Tests
         var expectedSum = 357;
         
         // Act
-        var result = Day3.FindMaximumJoltage(_testData);
+        var result = Day3.FindMaximumJoltageForTwoBatteries(_testData);
         
         // Assert
         Assert.Equal(expectedSum, result);
@@ -30,10 +30,24 @@ public class Day3Tests
     [InlineData("811111111111119", 89)]
     [InlineData("234234234234278", 78)]
     [InlineData("818181911112111", 92)]
-    public void BankJoltage_CorrectOutput(string batteryBank, int expectedJoltage)
+    public void BankJoltageForTwoBatteries_CorrectOutput(string batteryBank, int expectedJoltage)
     {
         // Act
-        var result = Day3.BankJoltage(batteryBank);
+        var result = Day3.BankJoltageForTwoBatteries(batteryBank);
+        
+        // Assert
+        Assert.Equal(expectedJoltage, result);
+    }
+
+    [Theory]
+    [InlineData("987654321111111", 987654321111)]
+    [InlineData("811111111111119", 811111111119)]
+    [InlineData("234234234234278", 434234234278)]
+    [InlineData("818181911112111", 888911112111)]
+    public void BankJoltageForTwelveBatteries_CorrectOutput(string batteryBank, long expectedJoltage)
+    {
+        // Act
+        var result = Day3.BankJoltageForTwelveBatteries(batteryBank);
         
         // Assert
         Assert.Equal(expectedJoltage, result);

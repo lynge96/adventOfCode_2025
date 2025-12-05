@@ -1,6 +1,10 @@
 ﻿using Day_2___Gift_Shop;
 
+// Advent of Code 2025 - Day 2
+// Link: https://adventofcode.com/2025/day/2
+
 Console.WriteLine("Advent of Code 2025 Day 02");
+Console.WriteLine("--- Gift Shop ---");
 
 var input = File.ReadAllText("input.txt");
 var ranges = Day2.ParseInput(input);

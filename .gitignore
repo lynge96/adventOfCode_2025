@@ -61,3 +61,7 @@ nunit-*.xml
 *.sln.docstates
 
 *.DotSettings.user
+
+*.txt
+
+*.md

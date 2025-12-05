@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 2 - Gift Shop", "src\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 3 - Lobby", "src\Day 3 - Lobby\Day 3 - Lobby.csproj", "{E447C1C9-1FDE-4B51-9BFE-89591B62FB73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 4 - Printing Department", "src\Day 4 - Printing Department\Day 4 - Printing Department.csproj", "{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{E447C1C9-1FDE-4B51-9BFE-89591B62FB73}.Release|x64.Build.0 = Release|Any CPU
 		{E447C1C9-1FDE-4B51-9BFE-89591B62FB73}.Release|x86.ActiveCfg = Release|Any CPU
 		{E447C1C9-1FDE-4B51-9BFE-89591B62FB73}.Release|x86.Build.0 = Release|Any CPU
+		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Debug|x64.Build.0 = Debug|Any CPU
+		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Debug|x86.Build.0 = Debug|Any CPU
+		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Release|x64.ActiveCfg = Release|Any CPU
+		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Release|x64.Build.0 = Release|Any CPU
+		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Release|x86.ActiveCfg = Release|Any CPU
+		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

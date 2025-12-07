@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 3 - Lobby", "src\Day 3 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 4 - Printing Department", "src\Day 4 - Printing Department\Day 4 - Printing Department.csproj", "{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 5 - Cafeteria", "src\Day 5 - Cafeteria\Day 5 - Cafeteria.csproj", "{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,18 @@ Global
 		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Release|x64.Build.0 = Release|Any CPU
 		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Release|x86.ActiveCfg = Release|Any CPU
 		{D4C4AACB-62CC-4F3D-B96C-E9B1D8789CDC}.Release|x86.Build.0 = Release|Any CPU
+		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Debug|x64.Build.0 = Debug|Any CPU
+		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Debug|x86.Build.0 = Debug|Any CPU
+		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Release|x64.ActiveCfg = Release|Any CPU
+		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Release|x64.Build.0 = Release|Any CPU
+		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Release|x86.ActiveCfg = Release|Any CPU
+		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

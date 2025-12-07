@@ -23,6 +23,7 @@
     <ProjectReference Include="..\src\Day 2 - Gift Shop\Day 2 - Gift Shop.csproj" />
     <ProjectReference Include="..\src\Day 3 - Lobby\Day 3 - Lobby.csproj" />
     <ProjectReference Include="..\src\Day 4 - Printing Department\Day 4 - Printing Department.csproj" />
+    <ProjectReference Include="..\src\Day 5 - Cafeteria\Day 5 - Cafeteria.csproj" />
   </ItemGroup>
 
 </Project>

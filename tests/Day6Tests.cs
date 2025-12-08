@@ -19,6 +19,14 @@ public class Day6Tests
         new([51, 387, 215], "*"),
         new([64, 23, 314], "+")
     ];
+    
+    private readonly List<Day6.CehalopodMathProblem> _testDataCehalopodMathProblems =
+    [
+        new(["123", " 45", "  6"],"*"),
+        new(["328", "64 ", "98 "],"+"),
+        new([" 51", "387", "215"], "*"),
+        new(["64 ", "23 ", "314"], "+")
+    ];
 
     [Fact]
     public void ParseInput_ReturnsExpectedMathProblems()
@@ -45,5 +53,30 @@ public class Day6Tests
         // Assert
         Assert.Equal(expectedResult, result);
     }
-    
+
+    [Fact]
+    public void CephalopodParseInput_CorrectFormat()
+    {
+        // Arrange
+        var expectedFormat = _testDataCehalopodMathProblems;
+        
+        // Act
+        var result = Day6.CephalopodParseInput(_testData);
+        
+        // Assert
+        Assert.Equivalent(expectedFormat, result);
+    }
+
+    [Fact]
+    public void SolveCephalopodMathProblems_CorrectOutput()
+    {
+        // Arrange
+        var expectedSum = 3263827;
+        
+        // Act
+        var result = Day6.SolveCephalopodMathProblems(_testDataCehalopodMathProblems);
+        
+        // Assert
+        Assert.Equal(expectedSum, result);
+    }
 }

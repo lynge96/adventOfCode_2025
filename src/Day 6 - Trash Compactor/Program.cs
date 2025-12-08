@@ -14,4 +14,9 @@ Console.WriteLine("--- Part 1 ---");
 var grandTotal = Day6.GrandTotalOfProblems(parsedInput);
 Console.WriteLine($"The grand total is: {grandTotal}");
 
+Console.WriteLine("--- Part 2 ---");
+var cephalopodParsedInput = Day6.CephalopodParseInput(input);
+var cephalopodMathGrandTotal = Day6.SolveCephalopodMathProblems(cephalopodParsedInput);
+Console.WriteLine($"The grand total is: {cephalopodMathGrandTotal}");
+
 Console.ReadLine();

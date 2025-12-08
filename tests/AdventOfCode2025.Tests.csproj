@@ -24,6 +24,7 @@
     <ProjectReference Include="..\src\Day 3 - Lobby\Day 3 - Lobby.csproj" />
     <ProjectReference Include="..\src\Day 4 - Printing Department\Day 4 - Printing Department.csproj" />
     <ProjectReference Include="..\src\Day 5 - Cafeteria\Day 5 - Cafeteria.csproj" />
+    <ProjectReference Include="..\src\Day 6 - Trash Compactor\Day 6 - Trash Compactor.csproj" />
   </ItemGroup>
 
 </Project>

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 4 - Printing Department
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 5 - Cafeteria", "src\Day 5 - Cafeteria\Day 5 - Cafeteria.csproj", "{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 6 - Trash Compactor", "src\Day 6 - Trash Compactor\Day 6 - Trash Compactor.csproj", "{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,18 @@ Global
 		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Release|x64.Build.0 = Release|Any CPU
 		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Release|x86.ActiveCfg = Release|Any CPU
 		{C71AD898-EE69-4359-AFE5-DB27BE91D4C0}.Release|x86.Build.0 = Release|Any CPU
+		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Debug|x64.Build.0 = Debug|Any CPU
+		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Debug|x86.Build.0 = Debug|Any CPU
+		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Release|x64.ActiveCfg = Release|Any CPU
+		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Release|x64.Build.0 = Release|Any CPU
+		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Release|x86.ActiveCfg = Release|Any CPU
+		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

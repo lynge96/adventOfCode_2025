@@ -19,12 +19,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Day 7 - Laboratories\Day 7 - Laboratories.csproj" />
     <ProjectReference Include="..\src\Day 1 - Secret Entrance\Day 1 - Secret Entrance.csproj" />
     <ProjectReference Include="..\src\Day 2 - Gift Shop\Day 2 - Gift Shop.csproj" />
     <ProjectReference Include="..\src\Day 3 - Lobby\Day 3 - Lobby.csproj" />
     <ProjectReference Include="..\src\Day 4 - Printing Department\Day 4 - Printing Department.csproj" />
     <ProjectReference Include="..\src\Day 5 - Cafeteria\Day 5 - Cafeteria.csproj" />
     <ProjectReference Include="..\src\Day 6 - Trash Compactor\Day 6 - Trash Compactor.csproj" />
+    <ProjectReference Include="..\src\Day 7 - Laboratories\Day 7 - Laboratories.csproj" />
   </ItemGroup>
 
 </Project>

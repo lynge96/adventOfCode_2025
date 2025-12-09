@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 5 - Cafeteria", "src\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 6 - Trash Compactor", "src\Day 6 - Trash Compactor\Day 6 - Trash Compactor.csproj", "{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 7 - Laboratories", "src\Day 7 - Laboratories\Day 7 - Laboratories.csproj", "{CAA0B272-92F7-40E8-B581-BB88784F6C27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,18 @@ Global
 		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Release|x64.Build.0 = Release|Any CPU
 		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Release|x86.ActiveCfg = Release|Any CPU
 		{97251A3D-D5DA-488F-AA9E-2D80F7FDA3D5}.Release|x86.Build.0 = Release|Any CPU
+		{CAA0B272-92F7-40E8-B581-BB88784F6C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA0B272-92F7-40E8-B581-BB88784F6C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA0B272-92F7-40E8-B581-BB88784F6C27}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CAA0B272-92F7-40E8-B581-BB88784F6C27}.Debug|x64.Build.0 = Debug|Any CPU
+		{CAA0B272-92F7-40E8-B581-BB88784F6C27}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CAA0B272-92F7-40E8-B581-BB88784F6C27}.Debug|x86.Build.0 = Debug|Any CPU
+		{CAA0B272-92F7-40E8-B581-BB88784F6C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA0B272-92F7-40E8-B581-BB88784F6C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA0B272-92F7-40E8-B581-BB88784F6C27}.Release|x64.ActiveCfg = Release|Any CPU
+		{CAA0B272-92F7-40E8-B581-BB88784F6C27}.Release|x64.Build.0 = Release|Any CPU
+		{CAA0B272-92F7-40E8-B581-BB88784F6C27}.Release|x86.ActiveCfg = Release|Any CPU
+		{CAA0B272-92F7-40E8-B581-BB88784F6C27}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,4 +12,8 @@ Console.WriteLine("--- Part 1 ---");
 var splitCounter = Day7.CountBeamSplitting(input);
 Console.WriteLine($"The number of times the beam is split: {splitCounter}");
 
+Console.WriteLine("--- Part 2 ---");
+var timelines = Day7.NumberOfTimelines(input);
+Console.WriteLine($"The number of timelines: {timelines}");
+
 Console.ReadLine();

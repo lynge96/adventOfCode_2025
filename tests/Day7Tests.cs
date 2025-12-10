@@ -37,4 +37,16 @@ public class Day7Tests
         Assert.Equal(expectedSum, result);
     }
 
+    [Fact]
+    public void NumberOfTimelines_CorrectOutput()
+    {
+        // Arrange
+        var expectedTimelines = 40;
+        
+        // Act
+        var result = Day7.NumberOfTimelines(_testManifold);
+        
+        // Assert
+        Assert.Equal(expectedTimelines, result);
+    }
 }

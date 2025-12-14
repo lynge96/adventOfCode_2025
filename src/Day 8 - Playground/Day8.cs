@@ -26,22 +26,55 @@ public static class Day8
             pairs.Add(new JunctionPair(currentBox, closestBox, distance));
         }
         
-        var shortestDistances = pairs.OrderBy(pair => pair.Distance).ToList();
-        var first = shortestDistances.First();
+        var sortedBoxesByDistance = pairs
+            .OrderBy(pair => pair.Distance)
+            .Select(b => b.Box1)
+            .ToList();
 
-        List<JunctionBox> firstCircuit = [first.Box1, first.Box2];
+        List<Circuit> circuits = [];
         
-        List<Circuit> circuits = [new(firstCircuit)];
-        
-        foreach (var junctionPair in shortestDistances)
+        foreach (var currentBox in sortedBoxesByDistance)
         {
-            JunctionBox box1 = junctionPair.Box1;
-            JunctionBox box2 = junctionPair.Box2;
+            List<JunctionBox> boxes = [];
 
-            // Check om box2's tættest box er box1, ellers så fortsæt og lav et circuit ud af dem alle.
+            var (nextBox, _) = FindClosestJunctionBox(sortedBoxesByDistance, currentBox);
             
+            var existsInCircuit = circuits.Any(c => c.Boxes.Contains(nextBox));
+            if (existsInCircuit)
+            {
+                if (!circuits.Any(c => c.Boxes.Contains(currentBox)))
+                {
+                    circuits.Where(c => c.Boxes.Contains(nextBox)).ToList().ForEach(c => c.Boxes.Add(currentBox));
+                    continue;
+                }
+            }
+            
+            boxes.AddRange(currentBox, nextBox);
+            
+            bool circuitComplete = false;
+            
+            while (!circuitComplete)
+            {
+                var (nearestBox, _) = FindClosestJunctionBox(sortedBoxesByDistance, nextBox);
+
+                if (!boxes.Contains(nearestBox))
+                {
+                    boxes.Add(nearestBox);
+                }
+                
+                circuitComplete = boxes.Any(b => b.Equals(nextBox));
+            }
+
+            if (existsInCircuit)
+            {
+                boxes.Remove(nextBox);
+            }
+            
+            circuits.Add(new Circuit(boxes));
         }
 
+        var sortedCircuits = circuits.OrderByDescending(c => c.Boxes.Count).Distinct().Take(3).ToList();
+        
         return sum;
     }
 

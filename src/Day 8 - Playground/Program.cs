@@ -12,4 +12,8 @@ Console.WriteLine("--- Part 1 ---");
 var size = Day8.SizeOfThreeLargestCircuits(input, 1000);
 Console.WriteLine($"The size of the three largest circuits is: {size}");
 
+Console.WriteLine("--- Part 2 ---");
+var singleCircuit = Day8.LastPairInCircuit(input);
+Console.WriteLine($"The multiplied X-coordinates for the last two junction boxes: {singleCircuit}");
+
 Console.ReadLine();

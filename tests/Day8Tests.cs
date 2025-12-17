@@ -41,6 +41,17 @@ public class Day8Tests
         // Assert
         Assert.Equal(expectedSize, result);
     }
-    
-    
+
+    [Fact]
+    public void LastPairInCircuit_CorrectOutput()
+    {
+        // Arrange
+        var expectedProduct = 25272;
+        
+        // Act
+        var result = Day8.LastPairInCircuit(_testJunctionBoxes);
+        
+        // Assert
+        Assert.Equal(expectedProduct, result);
+    }
 }

@@ -9,7 +9,7 @@ Console.WriteLine("--- Playground ---");
 var input = File.ReadLines("input.txt").ToList();
 
 Console.WriteLine("--- Part 1 ---");
-var size = Day8.SizeOfThreeLargestCircuits(input);
+var size = Day8.SizeOfThreeLargestCircuits(input, 1000);
 Console.WriteLine($"The size of the three largest circuits is: {size}");
 
 Console.ReadLine();

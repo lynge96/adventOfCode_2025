@@ -35,7 +35,8 @@ public class Day8Tests
         var expectedSize = 40;
         
         // Act
-        var result = Day8.SizeOfThreeLargestCircuits(_testJunctionBoxes);
+        var pairs = 10;
+        var result = Day8.SizeOfThreeLargestCircuits(_testJunctionBoxes, pairs);
         
         // Assert
         Assert.Equal(expectedSize, result);

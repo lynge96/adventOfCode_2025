@@ -4,106 +4,110 @@ namespace Day_8___Playground;
 
 public static class Day8
 {
-    public record JunctionBox(int X, int Y, int Z);
-    public record JunctionPair(JunctionBox Box1, JunctionBox Box2, double Distance);
-
-    public record Circuit(List<JunctionBox> Boxes);
+    public record JunctionBox(int X, int Y, int Z, int Id);
+    public record JunctionConnection(JunctionBox FirstBox, JunctionBox SecondBox, double Length);
     
-    public static long SizeOfThreeLargestCircuits(List<string> junctionBoxCoordinates)
+    public static long SizeOfThreeLargestCircuits(List<string> junctionBoxCoordinates, int pairs)
     {
-        var sum = 0;
-        
         var junctionBoxes = ParseInput(junctionBoxCoordinates);
         var count = junctionBoxes.Count;
 
-        List<JunctionPair> pairs = [];
-
-        for (var boxIndex = 0; boxIndex < count; boxIndex++)
-        {
-            JunctionBox currentBox = junctionBoxes[boxIndex];
-            var (closestBox, distance) = FindClosestJunctionBox(junctionBoxes, currentBox);
-
-            pairs.Add(new JunctionPair(currentBox, closestBox, distance));
-        }
+        List<JunctionConnection> connections = [];
         
-        var sortedBoxesByDistance = pairs
-            .OrderBy(pair => pair.Distance)
-            .Select(b => b.Box1)
-            .ToList();
-
-        List<Circuit> circuits = [];
-        
-        foreach (var currentBox in sortedBoxesByDistance)
+        for (var boxIndex = 0; boxIndex < count - 1; boxIndex++)
         {
-            List<JunctionBox> boxes = [];
+            var firstBox = junctionBoxes[boxIndex];
 
-            var (nextBox, _) = FindClosestJunctionBox(sortedBoxesByDistance, currentBox);
-            
-            var existsInCircuit = circuits.Any(c => c.Boxes.Contains(nextBox));
-            if (existsInCircuit)
+            for (var nextBox = boxIndex + 1; nextBox < count; nextBox++)
             {
-                if (!circuits.Any(c => c.Boxes.Contains(currentBox)))
-                {
-                    circuits.Where(c => c.Boxes.Contains(nextBox)).ToList().ForEach(c => c.Boxes.Add(currentBox));
-                    continue;
-                }
+                var secondBox = junctionBoxes[nextBox];
+
+                var distance = CalculateDistance(firstBox, secondBox);
+
+                connections.Add(new JunctionConnection(firstBox, secondBox, distance));
             }
             
-            boxes.AddRange(currentBox, nextBox);
-            
-            bool circuitComplete = false;
-            
-            while (!circuitComplete)
-            {
-                var (nearestBox, _) = FindClosestJunctionBox(sortedBoxesByDistance, nextBox);
-
-                if (!boxes.Contains(nearestBox))
-                {
-                    boxes.Add(nearestBox);
-                }
-                
-                circuitComplete = boxes.Any(b => b.Equals(nextBox));
-            }
-
-            if (existsInCircuit)
-            {
-                boxes.Remove(nextBox);
-            }
-            
-            circuits.Add(new Circuit(boxes));
         }
 
-        var sortedCircuits = circuits.OrderByDescending(c => c.Boxes.Count).Distinct().Take(3).ToList();
+        var sortedConnections = connections.OrderBy(connection => connection.Length).Take(pairs).ToList();
         
-        return sum;
-    }
-
-    public static (JunctionBox, double distance) FindClosestJunctionBox(List<JunctionBox> junctionBoxes, JunctionBox box)
-    {
-        JunctionBox? closestBox = null;
-        double shortestDistance = double.MaxValue;
-
-        foreach (var junctionBox in junctionBoxes)
+        Dictionary<int, List<int>> circuits = new();
+        Dictionary<int, int> boxToCircuit = new();
+        
+        var circuitCount = 0;
+        
+        foreach (var connection in sortedConnections)
         {
-            if (junctionBox == box)
+            var firstBoxId = connection.FirstBox.Id;
+            var secondBoxId = connection.SecondBox.Id;
+
+            var firstExists = boxToCircuit.TryGetValue(firstBoxId, out var firstCircuitId);
+            var secondExists = boxToCircuit.TryGetValue(secondBoxId, out var secondCircuitId);
+
+            if (!firstExists && !secondExists) // New circuit
+            {
+                circuits[circuitCount] = new List<int> { firstBoxId, secondBoxId };
+
+                boxToCircuit[firstBoxId] = circuitCount;
+                boxToCircuit[secondBoxId] = circuitCount;
+
+                circuitCount++;
                 continue;
-            
-            var distance = CalculateDistance(box, junctionBox);
-                
-            if (distance <= shortestDistance)
-            {
-                shortestDistance = distance;
-                closestBox = junctionBox;
             }
+
+            if (firstExists && !secondExists) // Add second box to first circuit
+            {
+                circuits[firstCircuitId].Add(secondBoxId);
+                boxToCircuit[secondBoxId] = firstCircuitId;
+                continue;
+            }
+            
+            if (!firstExists && secondExists) // Add first box to second circuit
+            {
+                circuits[secondCircuitId].Add(firstBoxId);
+                boxToCircuit[firstBoxId] = secondCircuitId;
+                continue;
+            }
+            
+            // Merge circuits
+            if (firstCircuitId == secondCircuitId)
+            {
+                continue;
+            }
+            
+            var boxesToMove = circuits[secondCircuitId].ToList();
+
+            foreach (var boxId in boxesToMove)
+            {
+                circuits[firstCircuitId].Add(boxId);
+                boxToCircuit[boxId] = firstCircuitId;
+            }
+
+            circuits.Remove(secondCircuitId);
         }
         
-        return (closestBox!, shortestDistance);
+        var sortedCircuits = circuits
+            .OrderByDescending(circuit => circuit.Value.Count)
+            .Select(circuit => circuit.Value.Count)
+            .Distinct()
+            .Take(3)
+            .ToList();
+        
+        var productOfThreeLargestCircuits = sortedCircuits.First();
+
+        for (var i = 1; i < sortedCircuits.Count; i++)
+        {
+            productOfThreeLargestCircuits *= sortedCircuits[i];
+        }
+        
+        return productOfThreeLargestCircuits;
     }
     
     public static List<JunctionBox> ParseInput(List<string> input)
     {
         List<JunctionBox> junctionBoxes = [];
-
+        var id = 1;
+        
         foreach (var box in input)
         {
             var coordinates = box.Split(",");
@@ -111,9 +115,12 @@ public static class Day8
             var junctionBox = new JunctionBox(
                 int.Parse(coordinates[0]),
                 int.Parse(coordinates[1]),
-                int.Parse(coordinates[2]));
+                int.Parse(coordinates[2]),
+                id);
             
             junctionBoxes.Add(junctionBox);
+            
+            id++;
         }
         
         return junctionBoxes;
@@ -122,11 +129,13 @@ public static class Day8
     public static double CalculateDistance(JunctionBox box1, JunctionBox box2)
     {
         // Euclidean distance
-        var dx = box1.X - box2.X;
-        var dy = box1.Y - box2.Y;
-        var dz = box1.Z - box2.Z;
+        long dx = Math.Abs(box1.X - box2.X);
+        long dy = Math.Abs(box1.Y - box2.Y);
+        long dz = Math.Abs(box1.Z - box2.Z);
 
-        return Math.Sqrt(dx * dx + dy * dy + dz * dz);
+        var distance =Math.Sqrt(dx * dx + dy * dy + dz * dz);
+        
+        return distance;
     }
     
 }

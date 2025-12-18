@@ -28,6 +28,7 @@
     <ProjectReference Include="..\src\Day 6 - Trash Compactor\Day 6 - Trash Compactor.csproj" />
     <ProjectReference Include="..\src\Day 7 - Laboratories\Day 7 - Laboratories.csproj" />
     <ProjectReference Include="..\src\Day 8 - Playground\Day 8 - Playground.csproj" />
+    <ProjectReference Include="..\src\Day 9 - Movie Theater\Day 9 - Movie Theater.csproj" />
   </ItemGroup>
 
 </Project>
